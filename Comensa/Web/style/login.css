@@ -1,0 +1,41 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+  background-image: url("opening.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.home {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item {
+  height: 42%;
+  width: 25%;
+  background-color: rgba(245, 245, 245, 0.9);
+}
+.content {
+  width: 100%;
+  margin: auto;
+  padding-top: 2%;
+}
+label {
+  padding-left: 39%;
+  font-size: 30px;
+}
+span {
+  color:red;
+}
+.input-group {
+  width: 90%;
+  margin:auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+button {
+  width: 100%;
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/mocao_nome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text=""
+                android:textColor="@color/darkBlue"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/mocao_dataIni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mocao_nome"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:textStyle="italic"/>
+            <TextView
+                android:id="@+id/mocao_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mocao_nome"
+                android:layout_toEndOf="@+id/mocao_dataIni"
+                android:layout_marginTop="5dp"
+                android:text=" - "
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:textStyle="italic"/>
+            <TextView
+                android:id="@+id/mocao_dataFim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mocao_nome"
+                android:layout_toEndOf="@+id/mocao_to"
+                android:layout_marginTop="5dp"
+                android:text=""
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:textStyle="italic"/>
+            <TextView
+                android:id="@+id/mocao_descricao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mocao_dataIni"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text=""
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:textStyle="italic"/>
+
+        </RelativeLayout>
+    </TableRow>
+</TableLayout>

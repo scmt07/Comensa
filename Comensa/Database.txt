@@ -1,0 +1,84 @@
+CREATE TABLE Endereco (
+		idEndereco INTEGER AUTO_INCREMENT PRIMARY KEY,
+		bairro TEXT NOT NULL,
+		rua TEXT NOT NULL,
+		numero INTEGER NOT NULL,
+		complemento TEXT,
+		CEP TEXT NOT NULL);
+
+CREATE TABLE Estabelecimento (
+		idEstab INTEGER AUTO_INCREMENT PRIMARY KEY,
+		userEstab TEXT NOT NULL,
+		CNPJ TEXT NOT NULL,
+		nome TEXT NOT NULL,
+		telefone TEXT NOT NULL,
+		email TEXT NOT NULL,
+		senha TEXT NOT NULL,
+		idEndereco INTEGER NOT NULL,
+		CONSTRAINT fk_Estabelecimento_Endereco FOREIGN KEY (IdEndereco) REFERENCES Endereco(idEndereco));
+
+CREATE TABLE Mensalista (
+		idMensa INTEGER AUTO_INCREMENT PRIMARY KEY,
+		userMensa TEXT NOT NULL,
+		CPF TEXT NOT NULL,
+		nome TEXT NOT NULL,
+		telefone TEXT NOT NULL,
+		email TEXT NOT NULL,
+		senha TEXT NOT NULL,
+		idEndereco INTEGER NOT NULL,
+		CONSTRAINT fk_Mensalista_Endereco FOREIGN KEY (IdEndereco) REFERENCES Endereco(idEndereco));
+
+CREATE TABLE Contas (
+		saldo TEXT NOT NULL,
+		idEstab INTEGER NOT NULL,
+		idMensa INTEGER NOT NULL,
+		PRIMARY KEY  (idEstab,idMensa),
+		CONSTRAINT fk_Contas_Estabelecimento FOREIGN KEY (idEstab) REFERENCES Estabelecimento (idEstab),
+		CONSTRAINT fk_Contas_Mensalista FOREIGN KEY (idMensa) REFERENCES Mensalista (idMensa));
+
+CREATE TABLE Produto(
+		idProd INTEGER AUTO_INCREMENT,
+		idEstab INTEGER NOT NULL,
+		nome TEXT NOT NULL,
+		preco TEXT NOT NULL,
+		descricao TEXT,
+		PRIMARY KEY  (idEstab,idProdu),
+		CONSTRAINT fk_Produto_Estabelecimento FOREIGN KEY (idEstab) REFERENCES Estabelecimento (idEstab));
+
+CREATE TABLE Promocao(
+		idPromo INTEGER AUTO_INCREMENT,
+		idEstab INTEGER NOT NULL,
+		nome TEXT NOT NULL,
+		dataIni TEXT NOT NULL,
+		dataFim TEXT NOT NULL,
+		descricao TEXT,
+		PRIMARY KEY  (idEstab,idPromo),
+		CONSTRAINT fk_Promocao_Estabelecimento FOREIGN KEY (idEstab) REFERENCES Estabelecimento (idEstab));
+		
+INSERT INTO Endereco (Bairro, Rua, Numero, CEP) VALUES
+		("Centro", "PH Rolfs", 220, "36570000"),
+		("Universidade", "PH Rolfs", 310, "36570900"),
+		("Santo", "Vereador", 120, "36570000");
+		
+INSERT INTO Mensalista (UserMensa,CPF,Nome,Telefone,Email,Senha,IdEndereco) VALUES
+		("scmt", "01234567890", "Tulio", "31997505632", "scmt@", "qwe123",3);
+		
+INSERT INTO Estabelecimento (UserEstab, CNPJ, Nome, Telefone, Email, Senha, IdEndereco) VALUES
+		("Gerais", "251541525", "Gerais", "38915789", "email", "qwe123", 1),
+		("Forno", "251541525", "Forno", "38912560", "email", "qwe123", 2);
+
+INSERT INTO Contas (Saldo, idEstab, idMensa) VALUES
+		("23.20", "1", "1"),
+		("0.10", "2", "1");
+		
+INSERT INTO Produto (idEstab, Nome, Preco, Descricao) VALUES
+		("2", "Salada", "20.00","Salada"),
+		("2", "Pizza", "25.00","Pizza"),
+		("1", "Salada", "20.00","Salada"),
+		("1", "Pizza", "25.00","Pizza");
+					
+INSERT INTO Promocao (idEstab, Nome, DataIni, DataFim, Descricao) VALUES
+		("1", "Salada", "20/08/2017", "20/09/2017", "Salada"),
+		("1", "Pizza", "20/08/2017", "20/09/2017", "Pizza"),
+		("2", "Salada", "20/08/2017", "20/09/2017","Salada"),
+		("2", "Pizza", "20/08/2017", "20/09/2017","Pizza");

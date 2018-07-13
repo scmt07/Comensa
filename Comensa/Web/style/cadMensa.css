@@ -1,0 +1,44 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(153, 153, 255);
+}
+.home {
+  height: auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item {
+  height: 100%;
+  width: 49%;
+  padding-bottom: 4%;
+  background-color: rgba(245, 245, 245, 0.9);
+}
+.content {
+  width: 80%;
+  margin: auto;
+  padding-top: 2%;
+  /*background-color: rgba(20, 20, 20, 0.9);*/
+}
+label {
+  padding-left: 26%;
+  font-size: 30px;
+}
+span {
+  color:red;
+}
+.input-group {
+  width: 90%;
+  margin:auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+button {
+  width: 100%;
+}
+p {
+  padding-left: 5%;
+}

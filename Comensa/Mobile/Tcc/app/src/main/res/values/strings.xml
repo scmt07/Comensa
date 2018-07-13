@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Comensa</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+
+    <string name="erro_campo_obrigatório">Campo obrigatório.</string>
+    <string name="erro_usuario_inexistente">Usuário não existe.</string>
+    <string name="erro_senha_incorreta">Senha incorreta.</string>
+    <string name="erro_senha_invalida">Senha deve ter pelo menos 6 caracteres.</string>
+    <string name="erro_senhas_iguais">Repita a senha corretamente.</string>
+    <string name="erro_usuario_existente">Nome de usuário já existe.</string>
+
+    <string name="texto_nome">Nome:</string>
+    <string name="texto_usuario">Usuário:</string>
+    <string name="texto_senha">Senha:</string>
+    <string name="texto_confirmacao_senha">Confirmação da senha:</string>
+    <string name="texto_genero">Sexo:</string>
+    <string name="texto_feminino">Feminino</string>
+    <string name="texto_masculino">Masculino</string>
+    <string name="texto_login">Login</string>
+    <string name="texto_cadastrar">Cadastrar</string>
+</resources>
